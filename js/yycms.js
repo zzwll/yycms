@@ -61,7 +61,8 @@ function submit(){
     
 function tuichu(){//用户后台账号退出
      $.post("../../../sava/action.php",{yycms:"tuichu"},function(data){
-	  layer.msg(data.msg);	 
-     window.location.replace("/user/login.html"); 
-	 },"json");	
-};
+	  layer.msg(data.msg,{time: 1000,icon: 1},function(){
+	      location.href = "/user/login.html"; 
+	  });	 
+	 });	
+}
